@@ -29,102 +29,118 @@ class Main extends State<MyHomePage> {
     return Scaffold(
         body: Column(
       children: [
-        Row(
-          children: [
-            Column(
-              children: const [
-                Icon(Icons.login),
-              ],
-            ),
-            Column(
-              children: const [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    "Infomación",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
+        SafeArea(
+          child: Row(
+            children: [
+              SafeArea(
+                child: Column(
+                  children: const [
+                    Icon(Icons.login),
+                  ],
                 ),
-              ],
-            ),
-            Column(
-              children: [
-                Row(
-                  children: const <Widget>[
-                    Icon(
-                      Icons.web,
-                      color: Colors.black,
-                      size: 24.0,
-                    ),
-                    Icon(
-                      Icons.wifi,
-                      color: Colors.black,
-                      size: 30.0,
-                    ),
-                    Icon(
-                      Icons.upcoming,
-                      color: Colors.black,
-                      size: 36.0,
+              ),
+              SafeArea(
+                child: Column(
+                  children: const [
+                    Align(
+                      child: Text(
+                        "Infomación",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
-          ],
-        ),
-        Row(
-          children: const [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Text(
-                "Bienvenido de regreso \nUser_Name",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-          ],
+              SafeArea(
+                child: Column(
+                  children: [
+                    Row(
+                      children: const <Widget>[
+                        Icon(
+                          Icons.web,
+                          color: Colors.black,
+                          size: 24.0,
+                        ),
+                        Icon(
+                          Icons.wifi,
+                          color: Colors.black,
+                          size: 30.0,
+                        ),
+                        Icon(
+                          Icons.upcoming,
+                          color: Colors.black,
+                          size: 36.0,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-        Row(
-          children: [
-            Container(
-              child: ListView(
-                children: <Widget>[
-                  Column(
-                    children: const [
-                      Text("Radiación"),
-                      Icon(Icons.radar),
-                      Text("30"),
-                    ],
-                  ),
-                  Column(
-                    children: const [
-                      Text("Temperatura"),
-                      Icon(Icons.radar),
-                      Text("22.7" "°"),
-                    ],
-                  ),
-                  Column(
-                    children: const [
-                      Text("Humedad"),
-                      Icon(Icons.radar),
-                      Text("15.9"),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      const Text("Intensidad"),
-                      Row(
-                        children: const [Icon(Icons.radar), Text("0.8")],
+        SafeArea(
+          child: Row(
+            children: const [
+              Align(
+                child: Text(
+                  "Bienvenido de regreso \nUser_Name",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SafeArea(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  color: Colors.blue,
+                  child: ListView(
+                    children: <Widget>[
+                      Column(
+                        children: const [
+                          Text("Radiación"),
+                          Icon(Icons.radar),
+                          Text("30"),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("Temperatura"),
+                          Icon(Icons.radar),
+                          Text("22.7" "°"),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("Humedad"),
+                          Icon(Icons.radar),
+                          Text("15.9"),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          const Text("Intensidad"),
+                          Row(
+                            children: const [Icon(Icons.radar), Text("0.8")],
+                          )
+                        ],
                       )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-        Row(
+        SafeArea(
+            child: Row(
           children: [Image.asset('images/map.png')],
-        )
+        ))
       ],
     ));
   }
