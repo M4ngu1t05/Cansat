@@ -29,58 +29,52 @@ class Main extends State<MyHomePage> {
     return Scaffold(
         body: Column(
       children: [
-        SafeArea(
+        Container(
           child: Row(
             children: [
-              SafeArea(
-                child: Column(
-                  children: const [
-                    Icon(Icons.login),
-                  ],
-                ),
+              Column(
+                children: const [
+                  Icon(Icons.login),
+                ],
               ),
-              SafeArea(
-                child: Column(
-                  children: const [
-                    Align(
-                      child: Text(
-                        "Infomación",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+              Column(
+                children: const [
+                  Align(
+                    child: Text(
+                      "Infomación",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: const <Widget>[
+                      Icon(
+                        Icons.web,
+                        color: Colors.black,
+                        size: 24.0,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              SafeArea(
-                child: Column(
-                  children: [
-                    Row(
-                      children: const <Widget>[
-                        Icon(
-                          Icons.web,
-                          color: Colors.black,
-                          size: 24.0,
-                        ),
-                        Icon(
-                          Icons.wifi,
-                          color: Colors.black,
-                          size: 30.0,
-                        ),
-                        Icon(
-                          Icons.upcoming,
-                          color: Colors.black,
-                          size: 36.0,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      Icon(
+                        Icons.wifi,
+                        color: Colors.black,
+                        size: 30.0,
+                      ),
+                      Icon(
+                        Icons.upcoming,
+                        color: Colors.black,
+                        size: 36.0,
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
         ),
-        SafeArea(
+        Container(
           child: Row(
             children: const [
               Align(
@@ -92,7 +86,7 @@ class Main extends State<MyHomePage> {
             ],
           ),
         ),
-        SafeArea(
+        Container(
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -137,10 +131,11 @@ class Main extends State<MyHomePage> {
             ),
           ),
         ),
-        SafeArea(
-            child: Row(
-          children: [Image.asset('images/map.png')],
-        ))
+        Container(
+          child: Row(
+            children: [Image.asset('images/map.png')],
+          ),
+        ),
       ],
     ));
   }
